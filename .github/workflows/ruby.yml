@@ -1,0 +1,21 @@
+name: Ruby
+on: workflow_dispatch
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+    
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '2'
+        bundler-cache: true
+      env:
+        BUNDLE_RUBYGEMS__PKG__GITHUB__COM: Bearer:${{ github.token }}
+    
+    - name: Execute
+      run: bundle exec ruby src/main/ruby/TestActionsGetPackages.rb

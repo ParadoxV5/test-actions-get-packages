@@ -1,0 +1,13 @@
+# JetBrains
+/.idea/
+
+# Eclipse
+.project
+.classpath
+/.settings/
+
+# Java
+/target/
+
+# Ruby
+Gemfile.lock
