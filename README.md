@@ -24,5 +24,5 @@ Those workflow `.xml`s work well as example/template files too!
 ### License
 
 This work is free. You can redistribute it and/or modify it under the terms of the
-[Do What The Fuck You Want To Public License, Version 2](http://www.wtfpl.net/),
+[Do What The F*ck You Want To Public License, Version 2](http://www.wtfpl.net/),
 as published by Sam Hocevar. See the LICENSE file for more details.
