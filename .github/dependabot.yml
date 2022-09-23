@@ -4,6 +4,7 @@ registries:
   github-maven:
     type: maven-repository
     url: https://maven.pkg.github.com/ParadoxV5/
+    username: ''
     password: ${{ secrets.GITHUB_TOKEN }}
   github-rubygems:
     type: rubygems-server
@@ -17,7 +18,7 @@ updates:
   directory: /
   ignore:
   - update-types: [version-update:semver-major]
-    dependency-name: "*"
+    dependency-name: *
   schedule:
     interval: weekly
   assignees: [ParadoxV5]
@@ -28,7 +29,7 @@ updates:
   directory: /
   ignore:
   - update-types: [version-update:semver-major]
-    dependency-name: "*"
+    dependency-name: *
   schedule:
     interval: weekly
   assignees: [ParadoxV5]
