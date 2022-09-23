@@ -1,0 +1,33 @@
+version: 2
+
+registries:
+  github-maven:
+    type: maven-repository
+    url: https://maven.pkg.github.com/ParadoxV5/
+    password: ${{ secrets.GITHUB_TOKEN }}
+  github-gem:
+    type: rubygems-server
+    url: https://rubygems.pkg.github.com/ParadoxV5
+    token: ${{ secrets.GITHUB_TOKEN }}
+
+updates:
+
+- package-ecosystem: maven
+  registries: [github-maven]
+  insecure-external-code-execution: allow
+  directory: /
+  ignore:
+  - update-types: [version-update:semver-major]
+  schedule:
+    interval: weekly
+  assignees: [ParadoxV5]
+
+- package-ecosystem: bundler
+  registries: [github-gem]
+  insecure-external-code-execution: allow
+  directory: /
+  ignore:
+  - update-types: [version-update:semver-major]
+  schedule:
+    interval: weekly
+  assignees: [ParadoxV5]
